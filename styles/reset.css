@@ -28,6 +28,7 @@
 body {
   background: var(--background);
   height: 100vh;
+  display: flex;
 }
 
 body, button, input, textarea {
