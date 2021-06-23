@@ -16,12 +16,14 @@
   --overlay: #040911;
   --icon-details: #A5B0C1;
   --grey-dark: #4D5E77;
+  --opaque-grey: #eaecf2;
   --grey-blue: #A1B2CD;
   --grey-med: #D3D9E2; 
   --grey-light: #E5EAF1;
   --hover-blue: #5699FF;
   --hover-red: #EA4B65;
   --hover-grey: #8794A7;
+  --opaque-black: #040911cc;
   font-size: 62.5%; /* 10px */
 }
 
