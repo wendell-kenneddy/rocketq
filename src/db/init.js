@@ -10,8 +10,9 @@ const init = async () => {
 
   await db.exec(`CREATE TABLE questions (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
-    content TEXT,
-    is_checked INT
+    title TEXT,
+    is_checked INT,
+    room_id INT
   );`)
 
   await db.close();
