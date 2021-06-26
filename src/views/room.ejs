@@ -11,11 +11,15 @@
   <meta property="og:description" content="Sala: <%= roomId %>.">
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Rocket.Q | Sala <%= roomId %>" />
+  <meta property="og:url"
+    content="https://rocketqwk.herokuapp.com/room/<%= roomId %>" />
   <meta property="og:locale" content="pt-BR" />
-  <meta name="twitter:title" content="Rocket.Q | Sala <%= roomId %>">
-  <meta name="twitter:description" content="Sala: <%= roomId %>.">
+  <meta name="twitter:title" content="Rocket.Q | Sala <%= roomId %>" />
+  <meta name="twitter:description" content="Sala: <%= roomId %>." />
+  <meta name="twitter:url"
+    content="https://rocketqwk.herokuapp.com/room/<%= roomId %>" />
   <title>Rocket.Q | Sala <%= roomId %></title>
-  <link rel="shortcut icon" href="/images/favicon.svg" type="image/svg+xml">
+  <link rel="shortcut icon" href="/images/favicon.svg" type="image/svg+xml" />
 
   <!-- Styles -->
 
@@ -30,6 +34,8 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Open+Sans&family=Poppins:wght@400;500;600;700&display=swap"
     rel="stylesheet" />
+  <link rel="canonical"
+    href="https://rocketqwk.herokuapp.com/room/<%= roomId %>" />
 
   <script src="/scripts/bundle.js" defer type="module"></script>
 </head>
