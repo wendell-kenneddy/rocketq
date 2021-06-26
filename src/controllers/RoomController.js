@@ -44,6 +44,12 @@ module.exports = {
 
   async open(req, res) {
     const roomId = req.params.id;
+    const room = await Rooms.get(roomId);
+
+    if (!room) {
+      return res.render('home', { page: 'no-route' });
+    }
+
     const questions = await Questions.get(roomId);
     const questionsRead = await Questions.get(roomId, true);
     let noQuestions = questionsRead.length == 0 && questions.length == 0
