@@ -8,4 +8,18 @@
     flex-direction: column;
     gap: 1rem;
   }
+
+  .modal-wrapper .modal {
+    padding: 3rem;
+  }
+
+  .modal-wrapper .modal .buttons button,
+  .modal-wrapper .modal .buttons .button {
+    width: 100%;
+  }
+
+  .modal-wrapper .modal .buttons {
+    gap: 1rem;
+    flex-direction: column;
+  }
 }
