@@ -1,10 +1,46 @@
-module.exports = {
-  post(req, res) {
-    const roomId = req.params.roomId;
-    const qeuestionId = req.params.questionId;
-    const action = req.params.action;
-    const password = req.body.password;
+const Questions = require('../model/Questions');
+const Rooms = require('../model/Rooms');
 
-    console.log(`roomId: ${roomId}, questionId: ${qeuestionId}, action: ${action}, password: ${password}`);
+module.exports = {
+  async markAsRead(req, res) {
+    const roomId = req.params.roomId;
+    const questionId = req.params.questionId;
+    const password = req.body.password;
+    const roomExists = await Rooms.get(roomId);
+
+    if (roomExists.pass == password) {
+      await Questions.update('is_checked', 1, questionId);
+      return res.redirect(`/room/${roomId}`);
+    }
+
+    return res.render('error', {
+      error: 'Senha incorreta',
+      roomId
+    });
+  },
+
+  async delete(req, res) {
+    const roomId = req.params.roomId;
+    const questionId = req.params.questionId;
+    const password = req.body.password;
+    const roomExists = await Rooms.get(roomId);
+
+    if (roomExists.pass == password) {
+      await Questions.delete(questionId);
+      return res.redirect(`/room/${roomId}`);
+    }
+
+    return res.render('error', {
+      error: 'Senha incorreta',
+      roomId
+    });
+  },
+
+  async create(req, res) {
+    const question = req.body.question;
+    const roomId = req.params.roomId;
+
+    await Questions.create(question, roomId);
+    return res.redirect(`/room/${roomId}`)
   }
 }
